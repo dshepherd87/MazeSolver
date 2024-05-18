@@ -1,13 +1,11 @@
-from graphics import Window, Point, Line, Cell
+from graphics import Window, Point, Line
+from cell import Cell
+from maze import Maze
 
 def main():
-    win = Window(1000, 1000)
-    cell_1 = Cell(100, 100, 200, 200, win)
-    cell_1.draw()
-    cell_2 = Cell(100, 200, 200, 300, win, right_wall=False)
-    cell_2.draw()
-    cell_3 = Cell(200, 200, 300, 300, win, left_wall = False)
-    cell_3.draw()
+    win = Window(500, 500)
+    maze = Maze(250, 250, 30, 20, 20, 20, win, 125)
+    maze.solve()
     win.wait_for_close()
 
 main()
